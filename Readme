@@ -45,8 +45,7 @@ pip install rasa
 pip install rasa-sdk
 Train the model
 powershell
-Copy
-Edit
+\
 rasa train
 🚀 4. Run Rasa Servers
 4.1 Start Rasa API Server
