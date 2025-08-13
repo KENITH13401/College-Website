@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>College Chatbot</title>
+<style>
+  /* Floating bot icon */
+  #chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  #chat-toggle img { width: 32px; height: 32px; pointer-events: none; }
+
+  /* Chatbox container */
+  #chatbox {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 380px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+  #chatbox.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  #chatbox.minimized {
+    height: 50px;
+    overflow: hidden;
+  }
+
+  /* Header */
+  #header {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #header img { width: 28px; height: 28px; margin-right: 10px; }
+  .header-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  .header-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* Messages area */
+  #messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .message {
+    display: flex;
+    align-items: flex-end;
+    max-width: 75%;
+  }
+  .message.bot { align-self: flex-start; }
+  .message.user { align-self: flex-end; flex-direction: row-reverse; }
+  .bubble {
+    padding: 10px 14px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 14px;
+  }
+  .bot .bubble {
+    background: #000;
+    color: white;
+    border-bottom-left-radius: 0;
+  }
+  .user .bubble {
+    background: #007bff;
+    color: white;
+    border-bottom-right-radius: 0;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin: 0 6px;
+  }
+
+  /* Input area */
+  #input {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    background: white;
+  }
+  #input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    background: #f1f1f1;
+  }
+  #input button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+
+  /* Typing indicator */
+  .typing {
+    font-size: 13px;
+    color: gray;
+  }
+  .typing span {
+    animation: blink 1.4s infinite both;
+  }
+  .typing span:nth-child(2) { animation-delay: 0.2s; }
+  .typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating bot icon -->
+<div id="chat-toggle">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712106.png" alt="Bot Icon">
+</div>
+
+<!-- Chatbox -->
+<div id="chatbox">
+  <div id="header">
+    <div style="display:flex; align-items:center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712106.png" alt="Bot Logo">
+      College Chatbot
+    </div>
+    <div class="header-buttons">
+      <button class="header-btn" id="minimize-btn">–</button>
+      <button class="header-btn" id="close-btn">&times;</button>
+    </div>
+  </div>
+  <div id="messages"></div>
+  <div id="input">
+    <input id="userInput" type="text" placeholder="Type your message..." />
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script>
+const chatToggle = document.getElementById('chat-toggle');
+const chatbox = document.getElementById('chatbox');
+const closeBtn = document.getElementById('close-btn');
+const minimizeBtn = document.getElementById('minimize-btn');
+const messages = document.getElementById('messages');
+const sendBtn = document.getElementById('sendBtn');
+const inputField = document.getElementById('userInput');
+
+const botAvatar = "https://cdn-icons-png.flaticon.com/512/4712/4712106.png";
+const userAvatar = "https://cdn-icons-png.flaticon.com/512/1946/1946429.png";
+
+chatToggle.addEventListener('click', () => {
+  chatbox.classList.add('open');
+  chatbox.classList.remove('minimized');
+  inputField.focus();
+});
+
+closeBtn.addEventListener('click', () => {
+  chatbox.classList.remove('open');
+});
+
+minimizeBtn.addEventListener('click', () => {
+  chatbox.classList.toggle('minimized');
+});
+
+sendBtn.addEventListener('click', send);
+inputField.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    send();
+  }
+});
+
+function send() {
+  const text = inputField.value.trim();
+  if (text) {
+    addMessage('user', text);
+    inputField.value = '';
+    const typingId = showTyping();
+
+    fetch("http://localhost:5005/webhooks/rest/webhook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sender: "user", message: text })
+    })
+    .then(res => res.json())
+    .then(data => {
+      setTimeout(() => {
+        removeTyping(typingId);
+        data.forEach(msg => {
+          if (msg.text) addMessage('bot', msg.text);
+        });
+      }, 1000);
+    })
+    .catch(err => console.error("Error:", err));
+  }
+}
+
+function addMessage(sender, text) {
+  const msg = document.createElement('div');
+  msg.classList.add('message', sender);
+
+  const avatar = document.createElement('img');
+  avatar.src = sender === 'bot' ? botAvatar : userAvatar;
+  avatar.classList.add('avatar');
+
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  bubble.textContent = text;
+
+  msg.appendChild(avatar);
+  msg.appendChild(bubble);
+  messages.appendChild(msg);
+
+  messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+}
+
+function showTyping() {
+  const typingMsg = document.createElement('div');
+  typingMsg.classList.add('message', 'bot');
+  typingMsg.id = "typing-" + Date.now();
+
+  const avatar = document.createElement('img');
+  avatar.src = botAvatar;
+  avatar.classList.add('avatar');
+
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble', 'typing');
+  bubble.innerHTML = "<span>.</span><span>.</span><span>.</span>";
+
+  typingMsg.appendChild(avatar);
+  typingMsg.appendChild(bubble);
+  messages.appendChild(typingMsg);
+  messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+
+  return typingMsg.id;
+}
+
+function removeTyping(id) {
+  const typingMsg = document.getElementById(id);
+  if (typingMsg) typingMsg.remove();
+}
+</script>
+</body>
+</html>

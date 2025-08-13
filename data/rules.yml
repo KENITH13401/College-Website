@@ -1,0 +1,203 @@
+version: "3.1"
+
+rules:
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Affirm
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Deny
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: Thank you
+  steps:
+  - intent: thankyou
+  - action: utter_thankyou
+
+- rule: Sorry
+  steps:
+  - intent: sorry
+  - action: utter_sorry
+
+- rule: Bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: Ask college name
+  steps:
+  - intent: ask_college_name
+  - action: utter_ask_college_name
+
+- rule: Ask location
+  steps:
+  - intent: ask_location
+  - action: utter_ask_location
+
+- rule: Ask establishment year
+  steps:
+  - intent: ask_establishment
+  - action: utter_ask_establishment
+
+- rule: Ask AICTE approval
+  steps:
+  - intent: ask_aicte
+  - action: utter_ask_aicte
+
+- rule: Ask affiliation
+  steps:
+  - intent: ask_affiliation
+  - action: utter_ask_affiliation
+
+- rule: Ask college type
+  steps:
+  - intent: ask_college_type
+  - action: utter_ask_college_type
+
+- rule: Ask programs
+  steps:
+  - intent: ask_programs
+  - action: utter_ask_programs
+
+- rule: Ask departments
+  steps:
+  - intent: ask_departments
+  - action: utter_ask_departments
+
+- rule: Ask vision
+  steps:
+  - intent: ask_vision
+  - action: utter_ask_vision
+
+- rule: Ask mission
+  steps:
+  - intent: ask_mission
+  - action: utter_ask_mission
+
+- rule: Ask hostel
+  steps:
+  - intent: ask_hostel
+  - action: utter_ask_hostel
+
+- rule: Ask canteen
+  steps:
+  - intent: ask_canteen
+  - action: utter_ask_canteen
+
+- rule: Ask sports
+  steps:
+  - intent: ask_sports
+  - action: utter_ask_sports
+
+- rule: Ask wifi
+  steps:
+  - intent: ask_wifi
+  - action: utter_ask_wifi
+
+- rule: Ask contact
+  steps:
+  - intent: ask_contact
+  - action: utter_ask_contact
+
+- rule: Ask college hours
+  steps:
+  - intent: ask_college_hours
+  - action: utter_ask_college_hours
+
+- rule: Ask saturday open
+  steps:
+  - intent: ask_saturday
+  - action: utter_ask_saturday
+
+- rule: Ask reach college
+  steps:
+  - intent: ask_reach_college
+  - action: utter_ask_reach_college
+
+- rule: Ask transport
+  steps:
+  - intent: ask_transport
+  - action: utter_ask_transport
+
+- rule: Ask faculty ratio
+  steps:
+  - intent: ask_faculty_ratio
+  - action: utter_ask_faculty_ratio
+
+- rule: Ask faculty experience
+  steps:
+  - intent: ask_faculty_experience
+  - action: utter_ask_faculty_experience
+
+- rule: Ask events
+  steps:
+  - intent: ask_events
+  - action: utter_ask_events
+
+- rule: Ask placement cell
+  steps:
+  - intent: ask_placement_cell
+  - action: utter_ask_placement_cell
+
+- rule: Ask companies
+  steps:
+  - intent: ask_companies
+  - action: utter_ask_companies
+
+- rule: Ask package
+  steps:
+  - intent: ask_package
+  - action: utter_ask_package
+
+- rule: Ask student clubs
+  steps:
+  - intent: ask_student_clubs
+  - action: utter_ask_student_clubs
+
+- rule: Ask student portal
+  steps:
+  - intent: ask_student_portal
+  - action: utter_ask_student_portal
+
+- rule: Ask digital library
+  steps:
+  - intent: ask_digital_library
+  - action: utter_ask_digital_library
+
+- rule: Ask short term programs
+  steps:
+  - intent: ask_short_term
+  - action: utter_ask_short_term
+
+- rule: Ask latest notices
+  steps:
+  - intent: ask_latest_notices
+  - action: utter_ask_latest_notices
+
+- rule: Ask courses
+  steps:
+  - intent: ask_courses
+  - action: utter_ask_courses
+
+- rule: Ask admission process
+  steps:
+  - intent: ask_admission_process
+  - action: utter_ask_admission_process
+
+
+- rule: Handle facilities query
+  steps:
+    - intent: ask_facilities
+    - action: utter_ask_facilities

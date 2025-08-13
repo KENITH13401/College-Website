@@ -1,0 +1,171 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thankyou
+  - sorry
+  - bot_challenge
+  - ask_college_name
+  - ask_location
+  - ask_establishment
+  - ask_aicte
+  - ask_affiliation
+  - ask_college_type
+  - ask_programs
+  - ask_departments
+  - ask_vision
+  - ask_mission
+  - ask_hostel
+  - ask_canteen
+  - ask_sports
+  - ask_wifi
+  - ask_contact
+  - ask_college_hours
+  - ask_saturday
+  - ask_reach_college
+  - ask_transport
+  - ask_faculty_ratio
+  - ask_faculty_experience
+  - ask_events
+  - ask_placement_cell
+  - ask_companies
+  - ask_package
+  - ask_student_clubs
+  - ask_student_portal
+  - ask_digital_library
+  - ask_short_term
+  - ask_latest_notices
+  - ask_courses
+  - ask_admission_process
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you with VBVP College?"
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to ask anything again."
+
+  utter_affirm:
+    - text: "Great! Let me help you."
+
+  utter_happy:
+    - text: "I'm glad to hear that! 😊"
+
+  utter_deny:
+    - text: "Okay, let me know if you change your mind."
+
+  utter_thankyou:
+    - text: "You're welcome!"
+
+  utter_sorry:
+    - text: "No worries. How can I assist you?"
+
+  utter_bot_challenge:
+    - text: "I'm your virtual assistant here to help you with information about VBVP College."
+
+  utter_ask_college_name:
+    - text: "VBVP stands for Vidyavardhini's Bhausaheb Vartak Polytechnic."
+
+  utter_ask_location:
+    - text: "VBVP is located in Vasai, Maharashtra."
+
+  utter_ask_establishment:
+    - text: "VBVP was established in 1984."
+
+  utter_ask_aicte:
+    - text: "Yes, VBVP is approved by AICTE."
+
+  utter_ask_affiliation:
+    - text: "VBVP is affiliated with MSBTE."
+
+  utter_ask_college_type:
+    - text: "VBVP is a private self-financing institution."
+
+  utter_ask_programs:
+    - text: "VBVP offers diploma programs in Engineering like Computer, Mechanical, AI & ML."
+
+  utter_ask_departments:
+    - text: "Departments include Computer, Mechanical, and AI & ML."
+
+  utter_ask_vision:
+    - text: "VBVP aims to empower youth through quality technical education."
+
+  utter_ask_mission:
+    - text: "To develop technically competent professionals with ethical values."
+
+  utter_ask_hostel:
+    - text: "Yes, hostel facilities are available."
+
+  utter_ask_canteen:
+    - text: "Yes, there is a canteen on the campus."
+
+  utter_ask_sports:
+    - text: "VBVP has sports facilities for students."
+
+  utter_ask_wifi:
+    - text: "Wi-Fi and computer access are available."
+
+  utter_ask_contact:
+    - text: "You can contact VBVP via phone or email listed on the official website."
+
+  utter_ask_college_hours:
+    - text: "College is open from 9:00 AM to 5:00 PM."
+
+  utter_ask_saturday:
+    - text: "Yes, the college remains open on Saturdays."
+
+  utter_ask_reach_college:
+    - text: "From Vasai station, take a rickshaw or local bus to reach VBVP."
+
+  utter_ask_transport:
+    - text: "Yes, transport facilities are available."
+
+  utter_ask_faculty_ratio:
+    - text: "The student-teacher ratio is optimal for personal attention."
+
+  utter_ask_faculty_experience:
+    - text: "VBVP faculty are highly qualified and experienced."
+
+  utter_ask_events:
+    - text: "Yes, both cultural and technical events are held regularly."
+
+  utter_ask_placement_cell:
+    - text: "Yes, the placement cell supports student placements."
+
+  utter_ask_companies:
+    - text: "Companies like TCS, Infosys, and L&T visit the campus."
+
+  utter_ask_package:
+    - text: "Average placement package is around 2.5–3.5 LPA."
+
+  utter_ask_student_clubs:
+    - text: "Yes, there are various student-run clubs and committees."
+
+  utter_ask_student_portal:
+    - text: "Yes, students can access resources via the online portal."
+
+  utter_ask_digital_library:
+    - text: "You can access the digital library through the college website."
+
+  utter_ask_short_term:
+    - text: "Yes, VBVP offers short-term certification programs."
+
+  utter_ask_latest_notices:
+    - text: "Latest notices are available on the official website."
+
+  utter_ask_courses:
+    - text: "Courses include diploma in Computer, Mechanical, and AI & ML."
+
+  utter_ask_admission_process:
+    - text: "Admission is through DTE Maharashtra. Fill out the form and follow the process."
+
+  responses:
+  utter_ask_facilities:
+    - text: "VBVP provides facilities such as Wi-Fi, computer labs, library, sports facilities, and hostel."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

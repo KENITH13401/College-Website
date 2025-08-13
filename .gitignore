@@ -1,0 +1,45 @@
+# Node modules (if you use npm for frontend)
+node_modules/
+
+# Python cache & environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.log
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+
+# Rasa trained models
+models/
+
+# Rasa temporary files
+*.db
+events.out.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Local build files
+dist/
+build/
+*.egg-info/
+
+# Secrets & configs (keep safe)
+config.yml
+credentials.yml
+endpoints.yml
+
+# Cache
+.cache/

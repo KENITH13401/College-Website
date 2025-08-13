@@ -1,0 +1,74 @@
+# College Chatbot (Rasa + HTML Frontend)
+
+This guide explains how to set up and run the College Chatbot using **Rasa** as the backend and an HTML page as the frontend.
+
+---
+
+## 📦 1. Requirements
+- Python 3.8–3.11 installed
+- Rasa installed (`pip install rasa`)
+- (Optional) Rasa SDK for actions (`pip install rasa-sdk`)
+- A code editor (VS Code recommended)
+- Browser to run the HTML page
+
+---
+
+## 🗂 2. Project Structure
+project-folder/
+│
+├── actions/ # Custom action files (optional)
+├── data/ # NLU + Stories
+├── domain.yml # Rasa domain config
+├── config.yml # Pipeline config
+├── credentials.yml # API credentials (includes rest webhook)
+├── endpoints.yml # Action server endpoints
+├── index.html # Your chatbot HTML file
+└── ...
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ 3. Rasa Setup
+
+### Create virtual environment (recommended)
+```powershell
+python -m venv venv
+.\venv\Scripts\activate
+Install Rasa
+powershell
+Copy
+Edit
+pip install rasa
+pip install rasa-sdk
+Train the model
+powershell
+Copy
+Edit
+rasa train
+🚀 4. Run Rasa Servers
+4.1 Start Rasa API Server
+powershell
+Copy
+Edit
+rasa run --enable-api
+4.2 Start Action Server (if using custom actions)
+powershell
+Copy
+Edit
+python -m rasa_sdk --actions actions
+💻 5. Run the Chatbot Frontend
+Open index.html in your browser.
+
+Ensure it points to:
+
+javascript
+Copy
+Edit
+fetch('http://localhost:5005/webhooks/rest/webhook', { ... })
+Type a message and press Enter or click Send.
+
+to run the rasa server, use:
+ python -m rasa run --enable-api --cors "*" --debug

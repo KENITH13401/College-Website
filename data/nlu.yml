@@ -1,0 +1,228 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+    - howdy
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - take care
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - sure
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - not at all
+
+- intent: thankyou
+  examples: |
+    - thank you
+    - thanks
+    - thx
+    - appreciate it
+
+- intent: sorry
+  examples: |
+    - sorry
+    - my bad
+    - I apologize
+
+- intent: bot_challenge
+  examples: |
+    - who are you?
+    - are you a bot?
+    - what can you do?
+
+- intent: ask_college_name
+  examples: |
+    - What is the full form of VBVP?
+    - Expand VBVP
+    - what is VBVP
+
+- intent: ask_location
+  examples: |
+    - Where is VBVP located?
+    - VBVP address?
+    - location?
+
+- intent: ask_establishment
+  examples: |
+    - When was VBVP established?
+    - Year of establishment of VBVP?
+
+- intent: ask_aicte
+  examples: |
+    - Is VBVP approved by AICTE?
+    - AICTE approval of VBVP?
+
+- intent: ask_affiliation
+  examples: |
+    - Is VBVP affiliated to any university?
+    - Which board is VBVP affiliated to?
+
+- intent: ask_college_type
+  examples: |
+    - What type of college is VBVP?
+    - Is VBVP a private or government college?
+
+- intent: ask_programs
+  examples: |
+    - What diploma programs does VBVP offer?
+    - VBVP courses?
+    - what programs are there?
+
+- intent: ask_departments
+  examples: |
+    - What are the departments available in VBVP?
+    - Which departments are offered?
+
+- intent: ask_vision
+  examples: |
+    - What is the vision of VBVP?
+    - Vision statement of VBVP?
+
+- intent: ask_mission
+  examples: |
+    - What is the mission of VBVP?
+    - Mission of the college?
+
+- intent: ask_hostel
+  examples: |
+    - Does VBVP have hostel facilities?
+    - Is there a hostel?
+
+- intent: ask_canteen
+  examples: |
+    - Is there a canteen available on campus?
+    - VBVP canteen?
+    - canteen?
+
+- intent: ask_sports
+  examples: |
+    - Are there sports facilities at VBVP?
+    - Does VBVP have sports?
+
+- intent: ask_wifi
+  examples: |
+    - Does VBVP offer computer or internet access to students?
+    - Is wifi available in college?
+    - wifi?
+
+- intent: ask_contact
+  examples: |
+    - How can I contact VBVP?
+    - VBVP phone number?
+    - phone number?
+
+- intent: ask_college_hours
+  examples: |
+    - What are the working hours of VBVP?
+    - VBVP timings?
+
+- intent: ask_saturday
+  examples: |
+    - Is VBVP open on Saturdays?
+    - College open on weekends?
+
+- intent: ask_reach_college
+  examples: |
+    - How do I reach VBVP from Vasai station?
+    - Route to VBVP from station?
+
+- intent: ask_transport
+  examples: |
+    - Does VBVP provide any transport facility?
+    - Any college bus service?
+
+- intent: ask_faculty_ratio
+  examples: |
+    - What is the student-teacher ratio at VBVP?
+    - Student faculty ratio?
+
+- intent: ask_faculty_experience
+  examples: |
+    - Are the faculty members at VBVP experienced?
+    - Teacher experience?
+
+- intent: ask_events
+  examples: |
+    - Does the college organize technical or cultural events?
+    - Any college fest?
+
+- intent: ask_placement_cell
+  examples: |
+    - Is there a placement cell in VBVP?
+    - Placement support?
+
+- intent: ask_companies
+  examples: |
+    - Which companies visit VBVP for placements?
+    - Companies recruiting at VBVP?
+
+- intent: ask_package
+  examples: |
+    - What is the average placement package at VBVP?
+    - Average salary from placement?
+
+- intent: ask_student_clubs
+  examples: |
+    - Are there any student clubs at VBVP?
+    - VBVP student organizations?
+
+- intent: ask_student_portal
+  examples: |
+    - Is there an online portal for students?
+    - VBVP student login?
+
+- intent: ask_digital_library
+  examples: |
+    - How do I access the VBVP digital library?
+    - VBVP online library?
+
+- intent: ask_short_term
+  examples: |
+    - Are there any short-term certification programs at VBVP?
+    - Short term courses?
+
+- intent: ask_latest_notices
+  examples: |
+    - Where can I find the latest notices from VBVP?
+    - Latest announcements?
+
+- intent: ask_courses
+  examples: |
+    - What are the courses offered in VBVP?
+    - VBVP available courses?
+
+- intent: ask_admission_process
+  examples: |
+    - What is the admission process?
+    - How to get admission in VBVP?
+    - admission process?
+
+- intent: ask_facilities
+  examples: |
+    - wifi and computer access are available or not
+    - does the college have wifi
+    - is internet available in campus
+    - is there computer access for students
+    - do you provide wifi
+    - does the college have computer labs
+
+    
